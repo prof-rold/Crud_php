@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    $acao = 'read';
+    require '../pais/pais_controller.php';  
+?>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
@@ -20,11 +24,19 @@
         </nav>
         <!-- nav end -->
 
+        <!-- feedback inserção -->
+        <?php if(isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
+            <div class="bg-success pt-2 text-white d-flex justify-content-center">
+                <h5>Estado inserido com sucesso!</h5>
+            </div>
+        <?php } ?>
+        <!-- feedback inserção -->
+
         <br/>
 
         <!-- form -->
         <div class="container align-itens-center">
-            <form method="" action="">
+            <form method="post" action="estado_controller.php?acaoE=create">
                 <div class="row">
                     <div class="col-10 form-group">
                         <input type="text" class="form-control" placeholder="Inserir estado:" name="nome_estado">
@@ -34,15 +46,14 @@
                         <input type="submit" class="form-control button btn-primary">
                     </div>
                 </div>
-                <!-- check de pais do estado: será dinâmico depois, todos os inputs precisam ter o mesmo name para que o bootstrap nao permita marcar mais de uma opção -->
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="check-pais" id="check-pais-1">
-                    <label class="form-check-label" for="check-pais-1">País 1</label>
-                </div>
-                <div class="form-check">
-                    <input type="radio" class="form-check-input" name="check-pais" id="check-pais-2">
-                    <label class="form-check-label" for="check-pais-2">País 2</label>
-                </div>
+                <!-- check de paises -->
+                <?php foreach($paises as $indice => $pais) { ?>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="check_pais_<?=$pais->id?>" name="id_pais" value="<?=$pais->id?>">
+                        <label class="form-check-label" for="check_pais_<?=$pais->id?>"><?=$pais->nome_pais?></label>
+                    </div>
+                    <br>
+                <?php } ?>
                 <!-- check de paises end -->
             </form>
         </div>
