@@ -20,14 +20,22 @@
         </nav>
         <!-- nav end -->
 
-        <br/>
+        <!-- se a acao for inclusao, que é o valor passado pelo nosso controller ao fazer o create, vamos exibir a div com um feedback  -->
+        <?php if(isset($_GET['inclusao']) && $_GET['inclusao'] == 1) { ?>
+            <div class="bg-success pt-2 text-white d-flex justify-content-center">
+                <h5>País inserido com sucesso!</h5>
+            </div>
+        <?php } ?>
+        <!-- feedback inserção end -->
+
+        <br>
 
         <!-- form -->
         <div class="container align-itens-center">
-            <form method="" action="">
+            <form method="post" action="pais_controller.php?acao=create">
                 <div class="row">
                     <div class="col-10 form-group">
-                        <input type="text" class="form-control" placeholder="Inserir país:" name="nome_pais">
+                        <input type="text" class="form-control" placeholder="Inserir país:" name="nome">
                         <small class="form-text"><a href="lista_pais.php">Editar países</a></small>
                     </div>
                     <div class="col-2 form-group">
