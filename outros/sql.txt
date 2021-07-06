@@ -1,0 +1,11 @@
+CREATE TABLE pais_tb (
+	id int not null PRIMARY KEY AUTO_INCREMENT,
+	nome varchar (40)
+);
+
+CREATE TABLE estado_tb (
+	id int not null PRIMARY KEY AUTO_INCREMENT,
+	nome varchar (40),
+	id_pais int not null,
+	FOREIGN KEY (id_pais) REFERENCES pais_tb (id)
+);
