@@ -66,6 +66,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="novo_estado.php">Novo Estado</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../cidade/nova_cidade.php">Nova Cidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../bairro/novo_bairro.php">Novo Bairro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../logradouro/novo_logradouro.php">Novo Logradouro</a>
+                </li>
             </ul>
         </nav>
         <!-- nav end -->

@@ -2,7 +2,7 @@
     //A classe país, note que os atributos são privados e podem ser recuperados por getters e setters e eles são análogos às colunas da tabela país lá no banco
     class Pais {
         private $id;
-        private $nome;
+        private $nome_pais;
 
         //recebe uma váriavel $atributo e retorna ela, claro ela vai precisar ser um atributo dessa classe, id ou nome, já que são os únicos que ela tem acesso mas a variável poderia ter qualquer nome
         public function __get($atributo) {

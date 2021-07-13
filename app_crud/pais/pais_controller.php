@@ -19,7 +19,7 @@
     //verificamos a $acao e passamos tudo isso para o PaisService que vai criar nossas querys
     if($acao == 'create') {
         $pais = new Pais();
-        $pais->__set('nome', $_POST['nome']);
+        $pais->__set('nome_pais', $_POST['nome_pais']);
 
         $conexao = new Conexao();
 
@@ -39,7 +39,7 @@
     }else if ($acao == 'update') {
         $pais = new Pais();
         $pais->__set('id', $_POST['id']);
-        $pais->__set('nome', $_POST['nome']);
+        $pais->__set('nome_pais', $_POST['nome_pais']);
 
         $conexao = new Conexao();
 

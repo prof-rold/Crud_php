@@ -20,6 +20,15 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="#">Novo Estado</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../cidade/nova_cidade.php">Nova Cidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../bairro/novo_bairro.php">Novo Bairro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../logradouro/novo_logradouro.php">Novo Logradouro</a>
+                </li>
             </ul>
         </nav>
         <!-- nav end -->
@@ -39,7 +48,7 @@
             <form method="post" action="estado_controller.php?acaoE=create">
                 <div class="row">
                     <div class="col-10 form-group">
-                        <input type="text" class="form-control" placeholder="Inserir estado:" name="nome_estado">
+                        <input type="text" class="form-control" placeholder="Inserir estado:" name="nome_estado" required>
                         <small class="form-text"><a href="lista_estado.php">Editar estados</a></small>
                     </div>
                     <div class="col-2 form-group">
@@ -49,7 +58,7 @@
                 <!-- check de paises -->
                 <?php foreach($paises as $indice => $pais) { ?>
                     <div class="form-check">
-                        <input type="radio" class="form-check-input" id="check_pais_<?=$pais->id?>" name="id_pais" value="<?=$pais->id?>">
+                        <input type="radio" class="form-check-input" id="check_pais_<?=$pais->id?>" name="id_pais" value="<?=$pais->id?>" required>
                         <label class="form-check-label" for="check_pais_<?=$pais->id?>"><?=$pais->nome_pais?></label>
                     </div>
                     <br>

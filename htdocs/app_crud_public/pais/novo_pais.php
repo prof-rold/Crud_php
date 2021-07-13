@@ -16,6 +16,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../estado/novo_estado.php">Novo Estado</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../cidade/nova_cidade.php">Nova Cidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../bairro/novo_bairro.php">Novo Bairro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../logradouro/novo_logradouro.php">Novo Logradouro</a>
+                </li>
             </ul>
         </nav>
         <!-- nav end -->
@@ -35,7 +44,7 @@
             <form method="post" action="pais_controller.php?acao=create">
                 <div class="row">
                     <div class="col-10 form-group">
-                        <input type="text" class="form-control" placeholder="Inserir país:" name="nome">
+                        <input type="text" class="form-control" placeholder="Inserir país:" name="nome_pais" required>
                         <small class="form-text"><a href="lista_pais.php">Editar países</a></small>
                     </div>
                     <div class="col-2 form-group">

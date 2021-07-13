@@ -1,11 +1,32 @@
 CREATE TABLE pais_tb (
 	id int not null PRIMARY KEY AUTO_INCREMENT,
-	nome varchar (40)
+	nome_pais varchar (100)
 );
 
 CREATE TABLE estado_tb (
 	id int not null PRIMARY KEY AUTO_INCREMENT,
-	nome varchar (40),
+	nome_estado varchar (100),
 	id_pais int not null,
 	FOREIGN KEY (id_pais) REFERENCES pais_tb (id)
+);
+
+CREATE TABLE cidade_tb (
+	id int not null PRIMARY KEY AUTO_INCREMENT,
+	nome_cidade varchar (100),
+	id_estado int not null,
+	FOREIGN KEY (id_estado) REFERENCES estado_tb (id)
+);
+
+CREATE TABLE bairro_tb (
+	id int not null PRIMARY KEY AUTO_INCREMENT,
+	nome_bairro varchar (100),
+	id_cidade int not null,
+	FOREIGN KEY (id_cidade) REFERENCES cidade_tb (id)
+);
+
+CREATE TABLE logradouro_tb (
+	id int not null PRIMARY KEY AUTO_INCREMENT,
+	nome_logradouro varchar (100),
+	id_bairro int not null,
+	FOREIGN KEY (id_bairro) REFERENCES bairro_tb (id)
 );

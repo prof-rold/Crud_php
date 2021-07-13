@@ -22,7 +22,7 @@
                 //criar um input para entrada do texto
                 let inputPais = document.createElement ('input')
                 inputPais.type = 'text'
-                inputPais.name = 'nome'
+                inputPais.name = 'nome_pais'
                 inputPais.className = 'col-8 form-control'
                 inputPais.value = txt
 
@@ -69,6 +69,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="../estado/novo_estado.php">Novo Estado</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../cidade/nova_cidade.php">Nova Cidade</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../bairro/novo_bairro.php">Novo Bairro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../logradouro/novo_logradouro.php">Novo Logradouro</a>
+                </li>
             </ul>
         </nav>
         <!-- nav end -->
@@ -80,11 +89,11 @@
             <ul class="list-group">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <div id="pais_<?=$pais->id?>">
-                        <?= $pais->nome ?>
+                        <?= $pais->nome_pais ?>
                     </div>
                     <div>
                         <button class="btn btn-danger" onclick="remover(<?=$pais->id?>)"> Remover </button>
-                        <button class="btn btn-primary" onclick="editar(<?=$pais->id?>, '<?= $pais->nome ?>')"> Editar </button>
+                        <button class="btn btn-primary" onclick="editar(<?=$pais->id?>, '<?= $pais->nome_pais ?>')"> Editar </button>
                     </div>
                 </li>
             </ul>

@@ -12,23 +12,23 @@
 
         //crud
         public function create() {
-            $query = 'insert into pais_tb(nome)values(:nome)';
+            $query = 'insert into pais_tb(nome_pais)values(:nome_pais)';
 
             $stmt = $this->conexao->prepare($query);
-            $stmt->bindvalue(':nome', $this->pais->__get('nome'));
+            $stmt->bindvalue(':nome_pais', $this->pais->__get('nome_pais'));
             $stmt->execute();
         }public function read() {
-            $query = 'select id, nome from pais_tb';
+            $query = 'select id, nome_pais from pais_tb';
 
             $stmt = $this->conexao->prepare($query);
             $stmt->execute();
             return $stmt->fetchALL(PDO::FETCH_OBJ);
         }
         public function update() {
-            $query = "update pais_tb set nome = :nome where id = :id";
+            $query = "update pais_tb set nome_pais = :nome_pais where id = :id";
 
             $stmt = $this->conexao->prepare($query);
-            $stmt->bindValue(':nome', $this->pais->__get('nome'));
+            $stmt->bindValue(':nome_pais', $this->pais->__get('nome_pais'));
             $stmt->bindValue(':id', $this->pais->__get('id'));
             
             return $stmt->execute();
